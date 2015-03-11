@@ -1,0 +1,4 @@
+﻿打包:
+安装pyinstaller
+python pyinstaller.py keywordcollector.py
+

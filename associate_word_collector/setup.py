@@ -1,0 +1,3 @@
+from distutils.core import setup
+import py2exe
+setup(version = "",description = "",name = "",options = {"py2exe": {"compressed": 1,"optimize": 2,"ascii": 0,  "bundle_files": 1,"includes":["sip"],"dll_excludes": ["MSVCP90.dll",]}},zipfile = None,windows = [{"script": "D:/Users/bill_000/Desktop/keywordcollector/keywordcollector.py", "icon_resources": [(1, "D:/Users/bill_000/Desktop/keywordcollector/config11123-tmp78.py")]} ],)
