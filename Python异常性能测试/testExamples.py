@@ -41,7 +41,7 @@ def test3():
             pass
 
 
-# try放耗时操作中，try每一次操作并进行异常处理(捕捉抛出的异常)
+# try放耗时操作中，try每一次操作并进行异常处理(捕捉抛出的特定异常)
 @timer
 def test4():
     zero = 0
@@ -77,7 +77,7 @@ def test5():
 @timer
 def test6():
     zero = 0
-    for _ in xrange(1000000):
+    for _ 捕捉所有异常 不带任何异常类型
         try:
             if zero == 0:
                 raise ZeroDivisionError
