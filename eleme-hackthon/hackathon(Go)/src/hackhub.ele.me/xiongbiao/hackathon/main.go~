@@ -1,0 +1,53 @@
+package main
+
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"runtime"
+	"os"
+	"time"
+	"strconv"
+)
+
+func main() {
+	read_mysql_to_redis()
+	load_users()
+	load_foods()
+	ConfigRuntime()
+	StartGin()
+}
+
+func ConfigRuntime() {
+	nuCPU := 8
+	runtime.GOMAXPROCS(nuCPU)
+	fmt.Printf("Running with %d CPUs\n", nuCPU)
+}
+
+func StartGin() {
+	host := os.Getenv("APP_HOST")
+	port := os.Args[1]
+	if host == "" {
+		host = "localhost"
+	}
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Printf("Listening %s port\n", port)
+	gin.SetMode(gin.ReleaseMode)
+	router := gin.New()
+	router.Use(authenticate_and_check_data)
+	router.GET("/test/:sec", func(c *gin.Context) {
+		t := c.Param("sec")
+		b, _ := strconv.Atoi(t)
+		time.Sleep(time.Duration(b) * time.Second)
+		c.String(200, "OK")
+	})
+	router.POST("/login", login)
+	router.PATCH("/carts/:cart_id", add_food)
+	router.POST("/orders", create_order)
+	router.GET("/orders", get_order)
+	router.GET("/foods", get_foods)
+	router.POST("/carts", create_cart)
+	router.GET("/admin/orders", admin_get_order)
+	router.Run(host+":"+port)
+}

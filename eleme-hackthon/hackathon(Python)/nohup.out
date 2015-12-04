@@ -1,0 +1,89 @@
+[2015-11-11 15:58:44,741: INFO/MainProcess] Connected to redis://localhost:6379/1
+[2015-11-11 15:58:44,748: INFO/MainProcess] mingle: searching for neighbors
+[2015-11-11 15:58:45,757: INFO/MainProcess] mingle: all alone
+[2015-11-11 15:58:45,772: WARNING/MainProcess] celery@127.0.1.1 bill ready.
+
+Restarting celery worker (/usr/local/bin/celery -A tasks worker -c 8 --loglevel=info)
+ 
+ -------------- celery@127.0.1.1 bill v3.1.19 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.13.0-67-generic-x86_64-with-Deepin-2014.3-trusty
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7f7cb5653590
+- ** ---------- .> transport:   redis://localhost:6379/1
+- ** ---------- .> results:     disabled
+- *** --- * --- .> concurrency: 8 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.a_creat_order
+  . tasks.a_hmset
+  . tasks.a_ltrim
+  . tasks.a_rpush
+  . tasks.a_sadd
+  . tasks.a_set
+
+[2015-11-11 16:28:15,573: INFO/MainProcess] Connected to redis://localhost:6379/1
+[2015-11-11 16:28:15,579: INFO/MainProcess] mingle: searching for neighbors
+
+Restarting celery worker (/usr/local/bin/celery -A tasks worker -c 8 --loglevel=info)
+[2015-11-11 16:28:16,630: INFO/MainProcess] mingle: all alone
+celery@127.0.1.1 bill ready.
+
+
+ 
+ -------------- celery@127.0.1.1 bill v3.1.19 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.13.0-67-generic-x86_64-with-Deepin-2014.3-trusty
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7ff8896315d0
+- ** ---------- .> transport:   redis://localhost:6379/1
+- ** ---------- .> results:     disabled
+- *** --- * --- .> concurrency: 8 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.a_creat_order
+  . tasks.a_hmset
+  . tasks.a_ltrim
+  . tasks.a_rpush
+  . tasks.a_sadd
+  . tasks.a_set
+
+[2015-11-11 16:28:17,311: INFO/MainProcess] Connected to redis://localhost:6379/1
+[2015-11-11 16:28:17,319: INFO/MainProcess] mingle: searching for neighbors
+[2015-11-11 16:28:18,329: INFO/MainProcess] mingle: all alone
+[2015-11-11 16:28:18,339: WARNING/MainProcess] celery@127.0.1.1 bill ready.
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@127.0.1.1 bill v3.1.19 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.13.0-67-generic-x86_64-with-Deepin-2014.3-trusty
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7fab48e415d0
+- ** ---------- .> transport:   redis://localhost:6379/1
+- ** ---------- .> results:     disabled
+- *** --- * --- .> concurrency: 8 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.a_creat_order
+  . tasks.a_hmset
+  . tasks.a_ltrim
+  . tasks.a_rpush
+  . tasks.a_sadd
+  . tasks.a_set
+

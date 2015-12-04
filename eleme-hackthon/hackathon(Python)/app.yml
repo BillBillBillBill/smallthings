@@ -1,0 +1,25 @@
+language: py2
+script:
+  - apt-get install -y libev-dev
+  - sysctl -w net.ipv4.tcp_timestamps=1 
+  - sysctl -w net.ipv4.tcp_tw_recycle=1
+  - pip install -r requirements.txt
+  - python read_into_redis.py
+  #- python app.py
+  #- gunicorn -w 8 --worker-class="meinheld.gmeinheld.MeinheldWorker" app:application -b $APP_HOST:$APP_PORT
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py &
+  - python app.py

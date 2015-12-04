@@ -1,0 +1,7 @@
+language: go
+script:
+    - ulimit -n 4096
+    - export GOPATH=/vagrant
+    - export PATH=$PATH:$GOPATH/bin
+    - export GOPATH=/vagrant && go install hackhub.ele.me/xiongbiao/hackathon
+    - bin/hackathon

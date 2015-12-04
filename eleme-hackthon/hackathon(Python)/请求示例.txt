@@ -1,0 +1,34 @@
+登录:
+curl -i -H "Content-type: application/json" -X POST -d '{"username":"root","password":"toor"}' http://localhost:8080/login
+
+
+查询库存:
+http://localhost:8080/foods?access_token=1$9c44f3c3$60ce861516e3b99828fb567e36092cde2e0ceb1af8509327587096333fbbd488
+
+创建篮子:
+curl -i -H "Content-type: application/json" -X POST -d '' 'http://localhost:8080/carts?access_token=0000000001$093409718f5bcc7233665'
+
+
+添加食物：
+curl -i -s -X PATCH -H "Content-type: application/json" -d '{"food_id": 2,"count": 1}' 'http://localhost:8080/carts/3247bce700703f8cb4975bae49e95aa5?access_token=0000000001$093409718f5bcc7233665'
+
+下单
+curl -i -s -X POST -H "Content-type: application/json" -d '{"cart_id": "3247bce700703f8cb4975bae49e95aa5"}' 'http://localhost:8080/orders?access_token=0000000001$093409718f5bcc7233665'
+
+查询订单
+http://localhost:8080/orders?access_token=0000000001$093409718f5bcc7233665
+
+admin查询订单
+http://localhost:8080/admin/orders?access_token=e7c05c962edf49809bdae4f18c80f225
+
+{"cart_id ": 6981eb8d531ee5bc80427ef94aab2e8a}
+
+清空redis：
+redis-cli keys "*" | xargs redis-cli del
+cd /usr/local/bin/ && ./gendata && redis-cli keys "*" | xargs redis-cli del
+
+结束所有
+ps -aux|grep stress|cut -c 9-15|xargs kill -9
+
+Log
+tail -f app.log

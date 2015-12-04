@@ -1,0 +1,10 @@
+greenlet
+eventlet
+meinheld
+gevent
+pymysql
+redis
+gunicorn
+hiredis
+ujson
+bjoern
